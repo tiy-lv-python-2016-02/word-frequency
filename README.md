@@ -1,3 +1,5 @@
+# Word Frequency
+
 ### Objectives
 
 This assignment is designed to understand how to open and read from a file, work with dictionaries, and sort a list. The learning objective for this assignment is to understand how to reduce a collection of text (a book) into another form (a frequency dictionary).
