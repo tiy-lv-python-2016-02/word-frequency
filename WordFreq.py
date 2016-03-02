@@ -9,21 +9,37 @@ def strip_line(line):
 
 
 def get_all_words(lines):
+    """
+    :param lines: Multiple lines of stripped text.
+    :return: Single list of lowered words.
+    """
     words = []
     for line in lines:
-        words.extend(strip_line(line.lower())) # Best place for .lower()?
+        words.extend(strip_line(line.lower()))  # Best place for .lower()?
     return words
 
 
 def count_words(words):
+    """
+    :param words: A list of lowered words to be counted
+    :return: Dictionary of word counts
+    """
     count_dict = {}
     for word in set(words):
         count_dict[word] = words.count(word)
     return count_dict
 
 
+def top_counts(count_dict, number=20):
 
-with open("sample.txt") as text:
-    lines = text.readlines()
+    top = sorted(count_dict.items(), key=lambda x: x[1], reverse=True)
+    for item in top[:number]:
+        print(item[0], item[1])
+
+
+if __name__ == '__main__':
+
+    with open("sample.txt") as text:
+        lines = text.readlines()
 
 
