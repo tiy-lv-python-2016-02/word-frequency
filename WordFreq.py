@@ -3,20 +3,21 @@ import string
 
 def strip_line(line):
     """
-    Removes all punctuation from a line of text.
-    :return: A list of words.
+    Removes all punctuation from a line of text
+
+    :return: A list of words
     """
     return [x.strip(string.punctuation) for x in line.split()]
 
 
 def get_all_words(lines):
     """
-    :param lines: Multiple lines of stripped text.
-    :return: Single list of lowered words.
+    :param lines: Multiple lines of stripped text
+    :return: Single list of lowered words
     """
     words = []
     for line in lines:
-        words.extend(strip_line(line.lower()))  # Best place for .lower()?
+        words.extend(strip_line(line.lower()))
     return words
 
 
@@ -33,7 +34,8 @@ def count_words(words):
 
 def top_counts(count_dict, number=20):
     """
-    Prints out the number of most frequent words.
+    Prints out the number of most frequent words
+
     :param count_dict: Dict of word frequencies
     :param number: Number of results to print
     """
@@ -45,7 +47,9 @@ def top_counts(count_dict, number=20):
 
 def main(lines):
     """
-    Pulls everything into one nice function.
+    Pulls everything into one nice function
+
+    :return: Final result
     """
     words = get_all_words(lines)
     count_dict = count_words(words)
