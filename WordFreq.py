@@ -41,7 +41,6 @@ def top_counts(count_dict, number=20):
     """
     top = sorted(count_dict.items(), key=lambda x: x[1], reverse=True)
     for item in top[:number]:
-
         print(item[0], item[1])
 
 
